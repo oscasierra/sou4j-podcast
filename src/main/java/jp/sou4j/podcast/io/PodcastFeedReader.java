@@ -70,7 +70,7 @@ public class PodcastFeedReader {
 				if( iTunesBlockNode != null ) {
 					String value = NodeUtils.getChildTextNodeValue(iTunesBlockNode);
 					Boolean bool = (value.equals("Yes"));
-					podcast.getITunesInfo().setBlock(new Boolean((bool)));
+					podcast.getITunesInfo().setBlock(bool);
 				}
 
 				// itunes:category
@@ -100,7 +100,7 @@ public class PodcastFeedReader {
 				if( iTunesCompleteNode != null ) {
 					String value = NodeUtils.getChildTextNodeValue(iTunesCompleteNode);
 					Boolean bool = (value.equals("Yes"));
-					podcast.getITunesInfo().setComplete(new Boolean((bool)));
+					podcast.getITunesInfo().setComplete(bool);
 				}
 
 				// itunes:explicit
@@ -108,7 +108,7 @@ public class PodcastFeedReader {
 				if( iTunesExplicitNode != null ) {
 					String value = NodeUtils.getChildTextNodeValue(iTunesExplicitNode);
 					Boolean bool = (value.equals("yes") || value.equals("explicit") || value.equals("true"));
-					podcast.getITunesInfo().setExplicit(new Boolean((bool)));
+					podcast.getITunesInfo().setExplicit(bool);
 				}
 
 				// itunes:image

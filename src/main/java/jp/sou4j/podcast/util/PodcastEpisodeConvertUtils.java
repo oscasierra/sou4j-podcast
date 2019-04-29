@@ -45,7 +45,7 @@ public class PodcastEpisodeConvertUtils {
 				enclosure.setUrl(url);
 				enclosure.setType(type);
 				if( !StringUtils.isNullOrEmpty(length) ) {
-					enclosure.setLength(new Integer(length));
+					enclosure.setLength(Integer.parseInt(length));
 				}
 				episode.setEnclosure(enclosure);
 			}
@@ -65,7 +65,7 @@ public class PodcastEpisodeConvertUtils {
 			}
 			else if( childNode.getNodeName().equals("itunes:episode") ) {
 				String value = NodeUtils.getChildTextNodeValue(childNode);
-				episode.getITunesInfo().setEpisode(new Integer(value));
+				episode.getITunesInfo().setEpisode(Integer.parseInt(value));
 			}
 			else if( childNode.getNodeName().equals("itunes:episodeType") ) {
 				episode.getITunesInfo().setEpisodeType(NodeUtils.getChildTextNodeValue(childNode));
@@ -86,11 +86,11 @@ public class PodcastEpisodeConvertUtils {
 			}
 			else if( childNode.getNodeName().equals("itunes:order") ) {
 				String value = NodeUtils.getChildTextNodeValue(childNode);
-				episode.getITunesInfo().setOrder(new Integer(value));
+				episode.getITunesInfo().setOrder(Integer.parseInt(value));
 			}
 			else if( childNode.getNodeName().equals("tunes:season") ) {
 				String value = NodeUtils.getChildTextNodeValue(childNode);
-				episode.getITunesInfo().setSeason(new Integer(value));
+				episode.getITunesInfo().setSeason(Integer.parseInt(value));
 			}
 			else if( childNode.getNodeName().equals("link") ) {
 				episode.setLink(NodeUtils.getChildTextNodeValue(childNode));
